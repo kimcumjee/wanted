@@ -8,12 +8,13 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    private var loadButton: UIButton = {
+    private lazy var loadButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = UIColor(red: 52/255, green: 120/255, blue: 246/255, alpha: 1.0)
         view.setTitle("Load", for: .normal)
+        view.addTarget(self, action: #selector(loadAllImage), for: .touchUpInside)
         return view
     }()
     
@@ -65,13 +66,46 @@ class ViewController: UIViewController {
         self.loadButton.snp.makeConstraints {
             $0.leading.equalTo(self.view.safeAreaLayoutGuide).offset(24)
             $0.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-24)
-            $0.height.greaterThanOrEqualTo(48)
+            $0.height.equalTo(48)
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-24)
         }
     }
     
     private func setupImageDownloadView() {
         self.imageDownloadView.addSubviews(self.imageDownloadWidget1, self.imageDownloadWidget2, self.imageDownloadWidget3, self.imageDownloadWidget4, self.imageDownloadWidget5)
+        self.imageDownloadWidget1.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.height.equalTo(80)
+            $0.width.equalToSuperview()
+        }
+        self.imageDownloadWidget2.snp.makeConstraints {
+            $0.top.equalTo(self.imageDownloadWidget1.snp.bottom).offset(24)
+            $0.height.equalTo(80)
+            $0.width.equalToSuperview()
+        }
+        self.imageDownloadWidget3.snp.makeConstraints {
+            $0.top.equalTo(self.imageDownloadWidget2.snp.bottom).offset(24)
+            $0.height.equalTo(80)
+            $0.width.equalToSuperview()
+        }
+        self.imageDownloadWidget4.snp.makeConstraints {
+            $0.top.equalTo(self.imageDownloadWidget3.snp.bottom).offset(24)
+            $0.height.equalTo(80)
+            $0.width.equalToSuperview()
+        }
+        self.imageDownloadWidget5.snp.makeConstraints {
+            $0.top.equalTo(self.imageDownloadWidget4.snp.bottom).offset(24)
+            $0.height.equalTo(80)
+            $0.width.equalToSuperview()
+        }
+    }
+    
+    @objc func loadAllImage() {
+        self.imageDownloadWidget1.loadImage()
+        self.imageDownloadWidget2.loadImage()
+        self.imageDownloadWidget3.loadImage()
+        self.imageDownloadWidget4.loadImage()
+        self.imageDownloadWidget5.loadImage()
     }
 }
 

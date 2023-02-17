@@ -9,10 +9,19 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class ImageDownloadWidget: UIView {
+final class ImageDownloadWidget: UIView {
     private(set) var imageUrl: URL
     private var imageView: UIImageView = {
         let view = UIImageView()
+        view.image = UIImage(named: "Resources/placeholder.jpeg")
+        return view
+    }()
+    
+    private lazy var loadButton: UIButton = {
+        let view = UIButton()
+        view.addTarget(self, action: #selector(loadImage), for: .touchUpInside)
+        view.backgroundColor = UIColor(red: 52/255, green: 120/255, blue: 246/255, alpha: 1.0)
+        view.setTitle("Load", for: .normal)
         return view
     }()
     
@@ -27,15 +36,24 @@ class ImageDownloadWidget: UIView {
     }
     
     private func loadViews() {
-        self.addSubviews(imageView)
-        self.imageView.kf.indicatorType = .activity
-        self.imageView.kf.setImage(with: imageUrl)
+        self.addSubviews(imageView, loadButton)
         self.imageView.snp.makeConstraints {
-            $0.leading.equalTo(self.safeAreaLayoutGuide)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(24)
             $0.top.equalTo(self.safeAreaLayoutGuide)
-            $0.height.greaterThanOrEqualTo(64)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
+            $0.width.equalTo(64)
         }
+        
+        self.loadButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.width.equalTo(72)
+        }
+    }
+    
+    @objc func loadImage() {
+        self.imageView.kf.setImage(with: imageUrl)
     }
     
 }
