@@ -20,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10F164D5299FCEC900D85291 /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		10F36A87299E675000927180 /* wanted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wanted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F36A8A299E675000927180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F36A8C299E675000927180 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,13 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		102C371B29A261F9006DF459 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10F36AA7299E69B100927180 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		10F164D4299FCEC100D85291 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				10F164D5299FCEC900D85291 /* placeholder.jpeg */,
-				10F36A90299E675000927180 /* Main.storyboard */,
 				10F36A93299E675100927180 /* Assets.xcassets */,
-				10F36A95299E675100927180 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -77,13 +81,15 @@
 		10F36A89299E675000927180 /* wanted */ = {
 			isa = PBXGroup;
 			children = (
+				102C371B29A261F9006DF459 /* Extensions */,
 				10F164D4299FCEC100D85291 /* Resources */,
 				10F36A8A299E675000927180 /* AppDelegate.swift */,
 				10F36A8C299E675000927180 /* SceneDelegate.swift */,
 				10F36A8E299E675000927180 /* ViewController.swift */,
-				10F36A98299E675100927180 /* Info.plist */,
 				10F36A9E299E67FA00927180 /* ImageDownloadWidget.swift */,
-				10F36AA7299E69B100927180 /* UIView+Extension.swift */,
+				10F36A95299E675100927180 /* LaunchScreen.storyboard */,
+				10F36A90299E675000927180 /* Main.storyboard */,
+				10F36A98299E675100927180 /* Info.plist */,
 			);
 			path = wanted;
 			sourceTree = "<group>";
@@ -339,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vex.wanted.wanted;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vex.wanted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -368,7 +374,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vex.wanted.wanted;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vex.wanted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

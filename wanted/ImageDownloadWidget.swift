@@ -13,9 +13,11 @@ final class ImageDownloadWidget: UIView {
     private(set) var imageUrl: URL
     private var imageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "Resources/placeholder.jpeg")
+        view.image = UIImage(systemName: "photo")
         return view
     }()
+    
+    private var placeholderImage = UIImage(systemName: "photo")
     
     private lazy var loadButton: UIButton = {
         let view = UIButton()
@@ -39,8 +41,7 @@ final class ImageDownloadWidget: UIView {
         self.addSubviews(imageView, loadButton)
         self.imageView.snp.makeConstraints {
             $0.leading.equalTo(self.safeAreaLayoutGuide).offset(24)
-            $0.top.equalTo(self.safeAreaLayoutGuide)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide)
+            $0.height.equalTo(64)
             $0.width.equalTo(64)
         }
         
@@ -53,7 +54,7 @@ final class ImageDownloadWidget: UIView {
     }
     
     @objc func loadImage() {
-        self.imageView.kf.setImage(with: imageUrl)
+        self.imageView.kf.setImage(with: imageUrl, placeholder: placeholderImage)
     }
     
 }
