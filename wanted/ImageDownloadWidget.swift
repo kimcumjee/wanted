@@ -11,13 +11,19 @@ import Kingfisher
 
 final class ImageDownloadWidget: UIView {
     private(set) var imageUrl: URL
+    private var placeholderImage = UIImage(systemName: "photo")
+    
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "photo")
         return view
     }()
     
-    private var placeholderImage = UIImage(systemName: "photo")
+    private var progressbar: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "bar")
+        return view
+    }()
     
     private lazy var loadButton: UIButton = {
         let view = UIButton()
@@ -38,7 +44,7 @@ final class ImageDownloadWidget: UIView {
     }
     
     private func loadViews() {
-        self.addSubviews(imageView, loadButton)
+        self.addSubviews(imageView, loadButton, progressbar)
         self.imageView.snp.makeConstraints {
             $0.leading.equalTo(self.safeAreaLayoutGuide).offset(24)
             $0.height.equalTo(64)
@@ -50,6 +56,12 @@ final class ImageDownloadWidget: UIView {
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.width.equalTo(72)
+        }
+        
+        self.progressbar.snp.makeConstraints {
+            $0.leading.equalTo(self.imageView.snp.trailing).offset(24)
+            $0.center.equalToSuperview()
+            $0.height.equalTo(24)
         }
     }
     

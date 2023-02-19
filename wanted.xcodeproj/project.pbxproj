@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102C371D29A26356006DF459 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 102C371C29A26356006DF459 /* bar.png */; };
 		10F36A8B299E675000927180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F36A8A299E675000927180 /* AppDelegate.swift */; };
 		10F36A8D299E675000927180 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F36A8C299E675000927180 /* SceneDelegate.swift */; };
 		10F36A8F299E675000927180 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F36A8E299E675000927180 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		102C371C29A26356006DF459 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bar.png; path = ../../../../Downloads/bar.png; sourceTree = "<group>"; };
 		10F36A87299E675000927180 /* wanted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wanted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F36A8A299E675000927180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F36A8C299E675000927180 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		10F164D4299FCEC100D85291 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				102C371C29A26356006DF459 /* bar.png */,
 				10F36A93299E675100927180 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -170,6 +173,7 @@
 				10F36A97299E675100927180 /* LaunchScreen.storyboard in Resources */,
 				10F36A94299E675100927180 /* Assets.xcassets in Resources */,
 				10F36A92299E675000927180 /* Main.storyboard in Resources */,
+				102C371D29A26356006DF459 /* bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
